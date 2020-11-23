@@ -1,0 +1,19 @@
+header {    
+    position: sticky;
+    top: 0;
+    background-color: rgba($color: #ee1515, $alpha: 0.33);
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    max-width: 500px;;
+    & h1 {
+        font-size: 48px;
+        font-family: 'Courier New', Courier, monospace;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        text-align: center; 
+    }
+    
+    }
+

@@ -7,12 +7,18 @@
     <title>Infinite Scrolling &mid; Lasse Hindsberg</title>
 </head>
 <body>
-    <ul class="pokeList"></ul>
+    <header> <h1>Pokémon List</h1></header>
+    <main>
+        <ul class="pokeList"></ul>
 
-
+    </main>
+    
 
     <template id="template">
-        <li class="listItem"></li>
+        <li>
+            <img class="pokeImg" src="./assets/media/pokeball.png" data-src="" alt="">
+            <span class="pokeName"></span>
+        </li>
     </template>
 
 </body>

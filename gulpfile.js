@@ -4,6 +4,8 @@ var cleanCSS = require("gulp-clean-css");
 var connect = require("gulp-connect");
 var babel = require("gulp-babel");
 var concat = require("gulp-concat");
+var imagemin = require("gulp-imagemin");
+var imageResize = require ("gulp-image-resize")
 
 function processHTML() {
 	return gulp.src("src/html/**/*.html")
@@ -31,9 +33,20 @@ function processJS() {
 
 function processImages() {
 	return gulp.src(["src/img/**/*", "!src/images/**/thumb.db"])
+	.pipe(imagemin([
+		imagemin.mozjpeg({quality: 25}),
+		imagemin.optipng({ optimizationLevel: 1})
+	]))
+	.pipe(imageResize({
+		width: 100,
+		height: 100,
+		crop: true,
+		upscale: false
+	}))
 	.pipe(gulp.dest("dist/assets/media"))
 	.pipe(connect.reload());
 }
+
 function watch() {
 	gulp.watch("src/sass/**/*.scss",
 	{ ignoreInitial: false },
